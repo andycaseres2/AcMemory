@@ -2,7 +2,6 @@ import React from "react";
 import { Pressable, Text, StyleSheet } from "react-native";
 
 const Card = ({ onPress, isTurnedOver, children, nivel = 4 }) => {
-  console.log(nivel);
   return (
     <Pressable
       onPress={onPress}

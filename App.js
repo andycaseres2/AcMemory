@@ -32,7 +32,6 @@ export default function App() {
     setMatchedcards([]);
     setScore(0);
   };
-  console.log("setNivel", nivelCards);
 
   useEffect(() => {
     if (nivelCards === 1) {
@@ -110,6 +109,7 @@ export default function App() {
             </View>
             {didPlayerWin() && <Button onPress={resetGame} title="reset" />}
             <Button
+              color="white"
               onPress={() => {
                 setNivel(false);
                 setNivelCards(0);
@@ -134,13 +134,25 @@ export default function App() {
           </View>
           <View style={styles.containerButtons}>
             <Button
-              style={styles.button}
+              color="white"
               onPress={() => selectedNivel(1)}
               title="Nivel 1"
             />
-            <Button onPress={() => selectedNivel(2)} title="Nivel 2" />
-            <Button onPress={() => selectedNivel(3)} title="Nivel 3" />
-            <Button onPress={() => selectedNivel(4)} title="Nivel 4" />
+            <Button
+              color="white"
+              onPress={() => selectedNivel(2)}
+              title="Nivel 2"
+            />
+            <Button
+              color="white"
+              onPress={() => selectedNivel(3)}
+              title="Nivel 3"
+            />
+            <Button
+              color="white"
+              onPress={() => selectedNivel(4)}
+              title="Nivel 4"
+            />
           </View>
           <View style={styles.board}>
             {board.map((card, index) => {
@@ -177,6 +189,7 @@ const styles = StyleSheet.create({
     flexWrap: "wrap",
     justifyContent: "center",
     alignItems: "center",
+    marginBottom: 10,
   },
   containerButtons: {
     flexDirection: "row",
@@ -184,11 +197,14 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     padding: 10,
+    gap: 10,
   },
   board: {
     flexDirection: "row",
     flexWrap: "wrap",
     justifyContent: "center",
+    marginBottom: 20,
+    marginTop: 20,
   },
   container: {
     flex: 1,
