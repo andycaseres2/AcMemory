@@ -99,7 +99,9 @@ export default function App() {
                   <Card
                     key={index}
                     isTurnedOver={isTurnedOver}
-                    onPress={() => handleTapCard(index)}
+                    onPress={() => {
+                      didPlayerWin() ? " " : handleTapCard(index);
+                    }}
                     nivel={nivelCards}
                   >
                     {card}
@@ -107,7 +109,9 @@ export default function App() {
                 );
               })}
             </View>
-            {didPlayerWin() && <Button onPress={resetGame} title="reset" />}
+            {didPlayerWin() && (
+              <Button color="white" onPress={resetGame} title="reset" />
+            )}
             <Button
               color="white"
               onPress={() => {
